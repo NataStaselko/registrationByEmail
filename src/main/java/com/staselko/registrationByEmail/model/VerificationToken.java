@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @Entity
@@ -16,10 +17,10 @@ public class VerificationToken implements Serializable {
     private Long id;
 
     @Column(name = "TOKEN")
-    private String token;
+    private String token = UUID.randomUUID().toString();
 
     @Column(name = "DATE")
-    private LocalDateTime date = LocalDateTime.now().withNano(0);
+    private LocalDateTime expiryDate = LocalDateTime.now().plusMinutes(1440l).withNano(0);
 
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     @MapsId

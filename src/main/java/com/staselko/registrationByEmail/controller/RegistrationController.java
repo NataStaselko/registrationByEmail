@@ -1,6 +1,7 @@
 package com.staselko.registrationByEmail.controller;
 
 import com.staselko.registrationByEmail.dto.UserDto;
+import com.staselko.registrationByEmail.service.VerTokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,8 +15,11 @@ import javax.validation.Valid;
 @RequestMapping("/")
 @RequiredArgsConstructor
 public class RegistrationController {
+    private final VerTokenService verTokenService;
+
     @PostMapping("registration")
-    public ResponseEntity<Void> createVerificationToken(@RequestBody @Valid UserDto userDto){
-        return ResponseEntity.ok().build();
+    public ResponseEntity<String> createVerificationToken(@RequestBody @Valid UserDto userDto){
+        String token = verTokenService.createVerToken(userDto);
+        return ResponseEntity.ok(token);
     }
 }
