@@ -1,0 +1,29 @@
+package com.staselko.registrationByEmail.model;
+
+import lombok.Data;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+@Data
+@Entity
+@Table(name = "TOKENS")
+public class VerificationToken implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    private Long id;
+
+    @Column(name = "TOKEN")
+    private String token;
+
+    @Column(name = "DATE")
+    private LocalDateTime date = LocalDateTime.now().withNano(0);
+
+    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @MapsId
+    @JoinColumn(name = "id")
+    private User user;
+
+}
