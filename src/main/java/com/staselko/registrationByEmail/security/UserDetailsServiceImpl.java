@@ -17,10 +17,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private final UserRepo userRepo;
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        return userRepo.findByEmail(email)
+    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+        return userRepo.findByLogin(login)
                 .filter(User::isEnabled)
                 .map(UserDetailsImpl::new)
-                .orElseThrow(() -> new RuntimeException("User not found with name " + email));
+                .orElseThrow(() -> new RuntimeException("User not found with login " + login));
     }
 }

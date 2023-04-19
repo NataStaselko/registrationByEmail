@@ -1,6 +1,6 @@
 package com.staselko.registrationByEmail.security;
-import com.staselko.registrationByEmail.validator.EmailValid;
 import com.staselko.registrationByEmail.validator.PasswordValid;
+import com.staselko.registrationByEmail.validator.TextValid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Data
 public class JwtRequest implements Serializable {
-    @EmailValid
+    @TextValid
     private String username;
 
     @PasswordValid

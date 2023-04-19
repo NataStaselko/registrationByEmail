@@ -15,4 +15,5 @@ public class EmailValidator implements ConstraintValidator<EmailValid, String> {
                 && !value.endsWith("@")
                 && value.length() <= 100;
     }
+
 }

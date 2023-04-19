@@ -14,7 +14,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Objects;
 
 @Component
 @RequiredArgsConstructor
@@ -29,8 +28,6 @@ public class JwtFilter extends OncePerRequestFilter {
         String tokenHeader = request.getHeader("Authorization");
         String username = null;
         String token = null;
-        String tokenParam = null;
-
 
         if (tokenHeader != null && tokenHeader.startsWith("Bearer ")) {
             token = tokenHeader.substring(7);

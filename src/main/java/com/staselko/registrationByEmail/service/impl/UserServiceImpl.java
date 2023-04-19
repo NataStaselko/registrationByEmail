@@ -8,6 +8,7 @@ import com.staselko.registrationByEmail.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -16,7 +17,14 @@ public class UserServiceImpl implements UserService {
     private final UserConverter userConverter;
 
     @Override
-    public User createUser(UserDto userDto) {
+    public User createUser(UserDto userDto){
         return userRepo.save(userConverter.toUser(userDto));
+    }
+
+    @Override
+    public void registrationUser(String email) {
+        User user = userRepo.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found with email " + email));
+        user.setEnabled(true);
     }
 }

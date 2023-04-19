@@ -14,11 +14,9 @@ import org.springframework.stereotype.Service;
 public class VerTokenServiceImpl implements VerTokenService {
 
     private final VerTokenRepo verTokenRepo;
-    private  final UserService userService;
 
     @Override
-    public String createVerToken(UserDto userDto) {
-        User user = userService.createUser(userDto);
+    public String createVerToken(User user) {
         VerificationToken verificationToken = new VerificationToken();
         verificationToken.setUser(user);
         verTokenRepo.save(verificationToken);

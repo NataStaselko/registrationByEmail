@@ -15,6 +15,7 @@ public class UserConverterImpl implements UserConverter{
     public User toUser(UserDto userDto) {
         User user = new User();
         user.setEmail(userDto.getEmail());
+        user.setLogin(userDto.getLogin());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         return user;
     }
@@ -24,6 +25,7 @@ public class UserConverterImpl implements UserConverter{
         UserDto userDto = new UserDto();
         userDto.setId(user.getId());
         userDto.setEmail(user.getEmail());
+        userDto.setLogin(user.getLogin());
         return userDto;
     }
 }

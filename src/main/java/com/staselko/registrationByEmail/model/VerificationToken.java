@@ -19,12 +19,17 @@ public class VerificationToken implements Serializable {
     @Column(name = "TOKEN")
     private String token = UUID.randomUUID().toString();
 
-    @Column(name = "DATE")
-    private LocalDateTime expiryDate = LocalDateTime.now().plusMinutes(1440l).withNano(0);
+    @Column(name = "EXPIRY_DATE")
+    private LocalDateTime expiryDate = createTime();
 
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     @MapsId
     @JoinColumn(name = "id")
     private User user;
+
+    private LocalDateTime createTime(){
+        LocalDateTime date = LocalDateTime.now();
+        return date.plusHours(24).withNano(0);
+    }
 
 }
