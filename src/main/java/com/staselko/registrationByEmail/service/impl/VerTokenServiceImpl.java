@@ -34,7 +34,7 @@ public class VerTokenServiceImpl implements VerTokenService {
     @Override
     public boolean checkToken(VerificationToken token) {
             LocalDateTime date = token.getExpiryDate();
-            return date.isAfter(LocalDateTime.now());
+            return date.isAfter(LocalDateTime.now().withNano(0));
         }
 
     @Override
