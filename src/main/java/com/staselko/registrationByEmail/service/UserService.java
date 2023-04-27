@@ -8,5 +8,7 @@ import javax.security.auth.login.LoginException;
 public interface UserService {
     User createUser(UserDto userDto);
 
-    void registrationUser(String email);
+    User getUserById(long userId);
+
+    void updateUser(User user);
 }

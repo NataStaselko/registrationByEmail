@@ -2,6 +2,7 @@ package com.staselko.registrationByEmail.service.impl;
 
 import com.staselko.registrationByEmail.converter.UserConverter;
 import com.staselko.registrationByEmail.dto.UserDto;
+import com.staselko.registrationByEmail.exception.ResourceNotFoundException;
 import com.staselko.registrationByEmail.model.User;
 import com.staselko.registrationByEmail.repo.UserRepo;
 import com.staselko.registrationByEmail.service.UserService;
@@ -22,9 +23,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void registrationUser(String email) {
-        User user = userRepo.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("User not found with email " + email));
-        user.setEnabled(true);
+    public User getUserById(long userId) {
+        return userRepo.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userRepo.save(user);
     }
 }

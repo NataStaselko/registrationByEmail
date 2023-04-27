@@ -46,7 +46,7 @@ public class SecurityConfig{
                 .headers().frameOptions().disable();
 
         http.
-                authorizeRequests().antMatchers("/h2/**", "/login", "/registration").permitAll()
+                authorizeRequests().antMatchers("/h2/**", "/login", "/registration", "/confirm_email").permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyRequest().authenticated()
                 .and()

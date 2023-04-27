@@ -18,7 +18,9 @@
     <h4>Thank you for registering.
         Please click below to confirm your email</h4>
     <h4 th:text="${email}"></h4>
-    <button>Confirm email</button>
+    <a th:href="@{${url}}">
+        <button type="submit">Confirm email</button>
+    </a>
 
 </div>
 </body>
