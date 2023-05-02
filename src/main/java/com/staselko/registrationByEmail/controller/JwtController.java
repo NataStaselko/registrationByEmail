@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,6 +34,12 @@ public class JwtController {
         final String token = jwtUtil.generateToken(userDetails);
         final String login = jwtUtil.getUsernameFromToken(token);
         return ResponseEntity.ok(new JwtResponse(token, login));
+    }
+
+    @PostMapping("exit")
+    public ResponseEntity<Void> logout() {
+        SecurityContextHolder.clearContext();
+        return ResponseEntity.ok().build();
     }
 
 }

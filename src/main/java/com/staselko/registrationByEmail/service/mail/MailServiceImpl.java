@@ -23,7 +23,7 @@ public class MailServiceImpl implements MailService {
     public void sendMailToUser(User user, String token) {
         final Context context = new Context();
         context.setVariable("email", user.getEmail());
-        context.setVariable("url", "http://localhost:4200?ac=" + token + "&i=" + user.getId());
+        context.setVariable("url", "http://localhost:4200/confirm?ac=" + token + "&i=" + user.getId());
 
         final MimeMessage mimeMessage = this.mailSender.createMimeMessage();
         try {
