@@ -14,7 +14,7 @@ Registration by email
 #### _Project start:_
 To start the application download the file: 
 
-https://github.com/NataStaselko/HelpDesk-v1/releases
+https://github.com/NataStaselko/registrationByEmail/releases
 
 and run the following command from your terminal:
 ```sh
