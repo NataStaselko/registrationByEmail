@@ -23,6 +23,6 @@ java -jar registrationByEmail-0.0.1-SNAPSHOT.jar
 
 then follow the link:
 
-https://natastaselko.github.io/helpdesk/
+https://natastaselko.github.io/registration-by-email/
 
 ---
