@@ -18,7 +18,7 @@ https://github.com/NataStaselko/registrationByEmail/releases
 
 and run the following command from your terminal:
 ```sh
-java -jar helpdesk-0.0.1.jar
+java -jar registrationByEmail-0.0.1-SNAPSHOT.jar
 ```
 
 then follow the link:
