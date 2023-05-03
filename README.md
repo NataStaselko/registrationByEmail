@@ -26,3 +26,15 @@ then follow the link:
 https://natastaselko.github.io/registration-by-email/
 
 ---
+###	The password meets the following requirements:
+
+-	It is allowed to enter any Unicode character.
+
+-	It is required to contain at least one uppercase and one lowercase English alpha characters, one digit and one special character.
+
+- Special characters could be the following: ~."(),:;<>@[]!#$%&'*+-/=?^_`{|}
+
+- The minimum number of characters is 6.
+
+- The maximum number of characters is 20
+
