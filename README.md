@@ -14,7 +14,7 @@ Registration by email
 #### _Project start:_
 To start the application download the file: 
 
-https://github.com/NataStaselko/registrationByEmail/releases
+https://disk.yandex.ru/d/NyGmWw04zWW1kw
 
 and run the following command from your terminal:
 ```sh
@@ -23,7 +23,7 @@ java -jar registrationByEmail-0.0.1-SNAPSHOT.jar
 
 then follow the link:
 
-https://disk.yandex.ru/d/NyGmWw04zWW1kw
+https://natastaselko.github.io/registration-by-email/
 
 ---
 ###	The password meets the following requirements:
