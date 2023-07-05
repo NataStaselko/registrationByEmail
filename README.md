@@ -23,7 +23,7 @@ java -jar registrationByEmail-0.0.1-SNAPSHOT.jar
 
 then follow the link:
 
-https://natastaselko.github.io/registration-by-email/
+https://disk.yandex.ru/d/NyGmWw04zWW1kw
 
 ---
 ###	The password meets the following requirements:
